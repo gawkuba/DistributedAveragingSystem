@@ -52,18 +52,18 @@
 
 **master()**
 - Handles logic for Master mode:
-  1. Logs entry into Master mode.
-  2. Stores the initial `number` in the `capturedNumbers` list.
-  3. Continuously listens for messages:
+  - Logs entry into Master mode.
+  - Stores the initial `number` in the `capturedNumbers` list.
+  - Continuously listens for messages:
      - On receiving `0`, calculates the average of stored numbers, logs it, and broadcasts the value.
      - On receiving `-1`, logs shutdown, broadcasts `-1`, and closes the socket.
      - Parses other messages as integers or floats, logging and storing valid values.
 
 **slave()**
 - Handles logic for Slave mode:
-  1. Logs entry into Slave mode.
-  2. Sends the initial `number` to the Master on the specified port.
-  3. Closes the socket and terminates.
+  - Logs entry into Slave mode.
+  - Sends the initial `number` to the Master on the specified port.
+  - Closes the socket and terminates.
 
 **calculateAverage()**
 - Calculates the arithmetic mean of all non-zero values stored in `capturedNumbers`.
@@ -83,11 +83,11 @@
 ### Client
 #### main()
 - Main function of the Client:
-  1. Parses command-line arguments `host` and `port`.
-  2. Creates a UDP socket and connects to the specified address.
-  3. In a loop:
+  - Parses command-line arguments `host` and `port`.
+  - Creates a UDP socket and connects to the specified address.
+  - In a loop:
      - Allows the user to enter a message to send.
      - Exits the program if the user types `exit`.
-  4. Sends entered messages as UDP packets to the DAS application.
-  5. Closes the socket and terminates the program.
+  - Sends entered messages as UDP packets to the DAS application.
+  - Closes the socket and terminates the program.
 
